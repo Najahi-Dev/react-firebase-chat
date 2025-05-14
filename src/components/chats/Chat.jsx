@@ -1,11 +1,17 @@
 import "./chat.css";
 import EmojiPicker from "emoji-picker-react";
-import React from 'react'
+import React, { useEffect, useRef } from 'react';
 import { useState } from 'react';
 
 const Chat = () => {
   const[open,setOpen] = useState(false);
   const[text,setText] = useState("");
+
+  const endRef = useRef(null);
+
+  useEffect(() => {
+    endRef.current?.scrollIntoView({ behavior: "smooth" });
+  })
 
   const handleEmoji = e => {
     setText(prev => prev + e.emoji);
@@ -28,7 +34,36 @@ const Chat = () => {
           <img src="./info.png" alt=""/>
         </div>
       </div>
-      <div className="center"></div>
+      <div className="center">
+        <div className="message">
+          <img src="./avatar.png" alt=""/>
+          <div className="texts">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reprehenderit provident ex? Harum, dolore maxime, sint tempore inventore enim, voluptatem similique obcaecati sequi sed facere assumenda sunt neque laudantium natus?</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className="message own">
+          <div className="texts">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reprehenderit provident ex? Harum, dolore maxime, sint tempore inventore enim, voluptatem similique obcaecati sequi sed facere assumenda sunt neque laudantium natus?</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className="message">
+          <img src="./avatar.png" alt=""/>
+          <div className="texts">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reprehenderit provident ex? Harum, dolore maxime, sint tempore inventore enim, voluptatem similique obcaecati sequi sed facere assumenda sunt neque laudantium natus?</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div className="message own">
+          <div className="texts">
+            <img src="https://i.pinimg.com/736x/7b/d3/3a/7bd33aab18ce290589b7db2278a2e886.jpg" alt=""/>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae reprehenderit provident ex? Harum, dolore maxime, sint tempore inventore enim, voluptatem similique obcaecati sequi sed facere assumenda sunt neque laudantium natus?</p>
+            <span>1 min ago</span>
+          </div>
+        </div>
+        <div ref={endRef}></div>
+      </div>
       <div className="bottom">
         <div className="icons">
           <img src="./img.png" alt="" />
