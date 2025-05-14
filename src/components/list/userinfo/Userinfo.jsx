@@ -4,11 +4,11 @@ const Userinfo = () => {
   return (
     
     <div className='userinfo'>
-        <div class="user">
+        <div className="user">
             <img src="./avatar.png" alt=""/>
             <h2>John Doe</h2>
         </div>
-        <div class="icons">
+        <div className="icons">
             <img src="./more.png" alt=""/>
             <img src="./video.png" alt=""/>
             <img src="./edit.png" alt=""/>
@@ -18,5 +18,4 @@ const Userinfo = () => {
 }
 
 
-export 
-default Userinfo
+export default Userinfo
