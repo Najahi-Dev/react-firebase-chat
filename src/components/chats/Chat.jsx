@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { useState } from 'react';
 
 const Chat = () => {
+  // Hooks
   const[open,setOpen] = useState(false);
   const[text,setText] = useState("");
 
